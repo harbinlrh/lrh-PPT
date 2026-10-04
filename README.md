@@ -1,3 +1,42 @@
+# LRH MPA PPT 技能
+
+本仓库已同步最新版 **make-mpa-ppt**，用于根据论文、讲义、报告或已有幻灯片制作中文 MPA 教学课件。
+
+## 当前技能入口
+
+- [技能规范](SKILL.md)
+- [教学设计参考](references/teaching-design.md)
+- [可编辑性检查脚本](scripts/check_pptx.py)
+- [技能元数据](agents/openai.yaml)
+
+默认交付正文全部可编辑的 PPTX：文字、表格、图表标签、流程节点、箭头、来源标记和页码均采用 PowerPoint 原生对象；图表数据可编辑。禁止使用整页图片、正文截图、隐藏文字层或文字转轮廓替代正文。用户要求全部内容可编辑时，封面与装饰也使用原生形状。仅在用户明确允许时保留照片等图片资产。
+
+原材料与新增教学练习必须明确区分，研究证据、伦理理论与治理决策应形成连贯教学主线。
+
+## 安装与使用
+
+让 Codex 安装本仓库的技能，或克隆到本地 skills 目录，目录名使用 `make-mpa-ppt`：
+
+```bash
+git clone https://github.com/harbinlrh/lrh-PPT.git ~/.codex/skills/make-mpa-ppt
+```
+
+调用示例：`使用 $make-mpa-ppt，根据上传材料制作20页中文MPA课件，以公共信任重建为中心，正文全部可编辑，并明确标注新增教学练习。`
+
+## 交付检查
+
+```bash
+python scripts/check_pptx.py output.pptx --expected-slides 20 --require-all-editable
+```
+
+脚本检查原生正文、图片化内容、隐藏文字、外部引用、页码和结构等问题。结构检查通过后，仍须逐页渲染检查排版，并验证原生对象和图表数据的可编辑性。
+
+## 原有 CyberPPT 说明（保留参考）
+
+下文是仓库原有说明。当前 MPA 课件制作以本仓库 [SKILL.md](SKILL.md) 为准，特别是全部正文可编辑要求；下文提及的 CyberPPT 文件及安装地址属于原项目参考。
+
+---
+
 # CyberPPT
 
 [简体中文](README.md) | [繁體中文](README.zh-TW.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Français](README.fr.md) | [Português](README.pt.md) | [Español](README.es.md) | [العربية](README.ar.md)

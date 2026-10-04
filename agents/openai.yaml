@@ -1,0 +1,13 @@
+interface:
+  display_name: 制作中文MPA教学PPT
+  short_description: 制作正文全部可编辑的中文MPA课件，核验材料、练习、页码与原生对象
+  default_prompt: 使用 $make-mpa-ppt，根据我的材料制作正文、表格、图表与页码全部可编辑的中文MPA课件。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
