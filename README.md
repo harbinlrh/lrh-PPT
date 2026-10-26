@@ -31,6 +31,26 @@ python scripts/check_pptx.py output.pptx --expected-slides 20 --require-all-edit
 
 脚本检查原生正文、图片化内容、隐藏文字、外部引用、页码和结构等问题。结构检查通过后，仍须逐页渲染检查排版，并验证原生对象和图表数据的可编辑性。
 
+## HyperFrames 视频制作技能（固定版本）
+
+本仓库同时提供 **HyperFrames 0.8.154 核心 10 项技能**，用于用 HTML/CSS、图片、字幕和音频制作及渲染视频。官方来源为 `heygen-com/hyperframes`，固定提交 `96e2154d7cd2eeadfe7287a7c0dadd50221df9c3`。
+
+- [中文使用说明与跨设备配置](HYPERFRAMES.md)
+- [官方核心技能与许可证](plugins/hyperframes/)
+- [项目技能入口](.agents/skills/)
+- [固定来源与 SHA256 清单](plugins/hyperframes/SOURCE_SHA256.json)
+
+在支持仓库技能的 Codex 工作环境中打开本仓库，再运行：
+
+```sh
+make -C scripts/hyperframes check
+node scripts/hyperframes/run.mjs --check-env
+```
+
+调用示例：`使用 $hyperframes，结合我提供的照片制作35秒竖屏邀请视频，先读取本仓库 AGENTS.md，并通过 scripts/hyperframes/run.mjs 使用固定版本。`
+
+其他设备需准备 Node.js 22+、npm、FFmpeg/ffprobe 和渲染浏览器。网页普通聊天不会仅因 GitHub 中有技能文件就自动获得视频渲染能力；Codex Cloud 应关联本仓库并单独完成环境与渲染验收。只需要 MPA 技能时仍按上面的原有方式安装。
+
 ## 原有 CyberPPT 说明（保留参考）
 
 下文是仓库原有说明。当前 MPA 课件制作以本仓库 [SKILL.md](SKILL.md) 为准，特别是全部正文可编辑要求；下文提及的 CyberPPT 文件及安装地址属于原项目参考。
